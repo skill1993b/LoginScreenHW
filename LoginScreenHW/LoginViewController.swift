@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotNameBtn: UIButton!
     @IBOutlet weak var forgotPasswordBtn: UIButton!
+    
     var userLogin = "", userPassword = ""
     
     
@@ -31,9 +32,8 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let loggedVC = segue.destination as? LoggedInViewController else { return }
+        guard let loggedVC = segue.destination as? WelcomeViewController else { return }
         loggedVC.userLoginName = userLogin
-        loggedVC.userPassword = userPassword
     }
 
     @IBAction func loginBtnTappedFunc(_ sender: Any) {
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotUrNameTapped(_ sender: Any) {
+    @IBAction func forgotUrNameTapped() {
         let alert = UIAlertController(title: "Forgot your user name?", message: "Your user name is 'User'", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -56,12 +56,21 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    @IBAction func forgotUrPswrdTapped(_ sender: Any) {
+    @IBAction func forgotUrPswrdTapped() {
         let alert = UIAlertController(title: "Forgot your password?", message: "Your user name is 'Password'", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         self.present(alert, animated: true)
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userLoginTF.text = ""
+        userPasswordTF.text = ""
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
     }
     
 }
