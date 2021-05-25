@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoggedInViewController.swift
 //  LoginScreenHW
 //
 //  Created by Никита Журавлев on 25.05.2021.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoggedInViewController: UIViewController {
+    
+    var userLoginName = "", userPassword = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
-
 }
-
