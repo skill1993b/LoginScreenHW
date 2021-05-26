@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userLoginTF: UITextField!
     @IBOutlet weak var userPasswordTF: UITextField!
@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Understand", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
+        self.view.endEditing(true)
     }
     
     @IBAction func forgotUrNameTapped() {
@@ -69,8 +70,14 @@ class LoginViewController: UIViewController {
         userPasswordTF.text = ""
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         textField.resignFirstResponder()
+         return true
+     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
+        self.view.endEditing(true)
     }
     
 }
