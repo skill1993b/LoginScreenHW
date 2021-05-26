@@ -39,7 +39,7 @@
                                                 <state key="normal" title="Log In"/>
                                                 <connections>
                                                     <action selector="loginBtnTappedFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCO-EV-HxP"/>
-                                                    <segue destination="smW-nS-8nO" kind="presentation" id="4kC-V0-DRG"/>
+                                                    <segue destination="smW-nS-8nO" kind="presentation" modalPresentationStyle="fullScreen" id="4kC-V0-DRG"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-KG-XUU">
@@ -94,23 +94,24 @@
             <objects>
                 <viewController id="smW-nS-8nO" customClass="WelcomeViewController" customModule="LoginScreenHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SJd-eF-YDm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2Y-jq-ENR">
-                                <rect key="frame" x="186" y="410.5" width="42" height="21"/>
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-Uy-B9U">
-                                <rect key="frame" x="172.5" y="451.5" width="69" height="33"/>
+                                <rect key="frame" x="172.5" y="478.5" width="69" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Go Back!">
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
                                     <action selector="goBackBtn" destination="smW-nS-8nO" eventType="touchUpInside" id="uzn-yy-QdY"/>
+                                    <segue destination="tiB-7u-aUa" kind="unwind" unwindAction="unwindFor:" id="rev-Hb-cCh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,9 +124,9 @@
                             <constraint firstItem="E2Y-jq-ENR" firstAttribute="centerX" secondItem="SJd-eF-YDm" secondAttribute="centerX" id="qvb-Xs-WJu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ZHJ-Az-Vp1"/>
                     <connections>
                         <outlet property="greetingsLabel" destination="E2Y-jq-ENR" id="jdj-Qt-txZ"/>
-                        <segue destination="tiB-7u-aUa" kind="unwind" unwindAction="unwindFor:" id="Ot5-L0-62X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbW-cy-Tjj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

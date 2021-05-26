@@ -50,6 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func forgotUrNameTapped() {
+        self.view.endEditing(true)
         let alert = UIAlertController(title: "Forgot your user name?", message: "Your user name is 'User'", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -58,6 +59,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func forgotUrPswrdTapped() {
+        self.view.endEditing(true)
         let alert = UIAlertController(title: "Forgot your password?", message: "Your user name is 'Password'", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -66,6 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let welcomeVC = segue.source as? WelcomeViewController else { return }
         userLoginTF.text = ""
         userPasswordTF.text = ""
     }
@@ -73,7 +76,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
          textField.resignFirstResponder()
          return true
-     }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
