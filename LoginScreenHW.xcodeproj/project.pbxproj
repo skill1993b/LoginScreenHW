@@ -58,16 +58,56 @@
 		8475FD37265D92CF002EBE5F /* LoginScreenHW */ = {
 			isa = PBXGroup;
 			children = (
-				8475FD38265D92CF002EBE5F /* AppDelegate.swift */,
-				8475FD3A265D92CF002EBE5F /* SceneDelegate.swift */,
-				8475FD3C265D92CF002EBE5F /* LoginViewController.swift */,
-				8475FD3E265D92CF002EBE5F /* Main.storyboard */,
-				8475FD4C265D9394002EBE5F /* WelcomeViewController.swift */,
+				84AFD3FD2663C6FD00A64625 /*  Storyboards */,
+				84AFD3FC2663C6EC00A64625 /* Controllers */,
+				84AFD3FB2663C6D400A64625 /* Delegates */,
+				84AFD3FA2663C6CE00A64625 /* View */,
+				84AFD3F92663C6C700A64625 /* Model */,
 				8475FD41265D92D0002EBE5F /* Assets.xcassets */,
-				8475FD43265D92D0002EBE5F /* LaunchScreen.storyboard */,
 				8475FD46265D92D0002EBE5F /* Info.plist */,
 			);
 			path = LoginScreenHW;
+			sourceTree = "<group>";
+		};
+		84AFD3F92663C6C700A64625 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84AFD3FA2663C6CE00A64625 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84AFD3FB2663C6D400A64625 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8475FD3A265D92CF002EBE5F /* SceneDelegate.swift */,
+				8475FD38265D92CF002EBE5F /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		84AFD3FC2663C6EC00A64625 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8475FD4C265D9394002EBE5F /* WelcomeViewController.swift */,
+				8475FD3C265D92CF002EBE5F /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84AFD3FD2663C6FD00A64625 /*  Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8475FD3E265D92CF002EBE5F /* Main.storyboard */,
+				8475FD43265D92D0002EBE5F /* LaunchScreen.storyboard */,
+			);
+			path = " Storyboards";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

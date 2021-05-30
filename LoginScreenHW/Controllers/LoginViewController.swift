@@ -9,13 +9,19 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+// MARK: - IBOutlets
+    
     @IBOutlet weak var userLoginTF: UITextField!
     @IBOutlet weak var userPasswordTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgotNameBtn: UIButton!
     @IBOutlet weak var forgotPasswordBtn: UIButton!
     
+// MARK: - Main variables and functions
+
     var userLogin = "", userPassword = ""
+    
+    let defaultLogin = "User", defaultPassword = "Password"
     
     
     override func viewDidLoad() {
@@ -38,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func loginBtnTappedFunc(_ sender: Any) {
         guard let login = userLoginTF.text, let password = userPasswordTF.text else { return }
-        if login == "User" && password == "Password" {
+        if login == defaultLogin && password == defaultPassword {
             userLogin = login
             userPassword = password
         } else {
@@ -49,6 +55,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    
+// MARK: - IBActions
     @IBAction func forgotUrNameTapped() {
         self.view.endEditing(true)
         let alert = UIAlertController(title: "Forgot your user name?", message: "Your user name is 'User'", preferredStyle: .alert)
